@@ -4,11 +4,6 @@ import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunctio
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/7.
- * @Description: 请填写
- */
 public class FakeSource extends RichParallelSourceFunction<String> {
 
     private final Logger logger = LoggerFactory.getLogger(FakeSource.class);

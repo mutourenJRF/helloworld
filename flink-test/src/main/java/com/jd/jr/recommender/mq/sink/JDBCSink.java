@@ -9,11 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/10.
- * @Description: 请填写
- */
 public class JDBCSink extends RichSinkFunction<RecChartData> {
 
     private JDBCProperties jdbcProperties;

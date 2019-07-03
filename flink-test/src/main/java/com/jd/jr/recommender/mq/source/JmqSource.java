@@ -9,11 +9,6 @@ import com.jd.jr.recommender.mq.bean.JmqProperties;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/10.
- * @Description: 请填写
- */
 public class JmqSource extends RichParallelSourceFunction<String> {
 
     private boolean isRunning = true;

@@ -4,11 +4,6 @@ import com.jd.jr.recommender.mq.PropertyUtil;
 
 import java.io.Serializable;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/10.
- * @Description: 请填写
- */
 public class JDBCProperties implements Serializable {
 
     private String driverClass;

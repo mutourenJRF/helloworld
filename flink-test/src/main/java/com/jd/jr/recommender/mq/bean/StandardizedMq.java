@@ -2,11 +2,6 @@ package com.jd.jr.recommender.mq.bean;
 
 import java.io.Serializable;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/9.
- * @Description: 请填写
- */
 public class StandardizedMq implements Serializable {
 
     private String pin;

@@ -8,11 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/8.
- * @Description: 请填写
- */
 public class ExposureMessageListener implements MessageListener {
 
     private final Logger logger = LoggerFactory.getLogger(ExposureMessageListener.class);

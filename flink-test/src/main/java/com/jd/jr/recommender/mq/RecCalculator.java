@@ -24,18 +24,10 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/9.
- * @Description: 请填写
- */
 public class RecCalculator {
 
     private final String PV_TARGET="pv";
     private final String PCV_TARGET="pcv";
-//    private final String UV_TARGET="uv";
-//    private final String UCV_TARGET="ucv";
 
     public static void main(String[] args) throws Exception {
         JmqProperties jmqProperties = JmqProperties.loadProperties();
@@ -45,6 +37,7 @@ public class RecCalculator {
         reclocList.add("100045");
         reclocList.add("100057");
         reclocList.add("100058");
+        final List<String> reclocs=reclocList;
 
         // 获取环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -99,7 +92,7 @@ public class RecCalculator {
                     public boolean filter(StandardizedMq standardizedMq) throws Exception {
                         final String PV="imp";
                         //只保留曝光
-                        return PV.equals(standardizedMq.getType())&&reclocList.contains(standardizedMq.getRecloc());
+                        return PV.equals(standardizedMq.getType())&&reclocs.contains(standardizedMq.getRecloc());
                     }
                 });
         //分支点击
@@ -109,7 +102,7 @@ public class RecCalculator {
                     public boolean filter(StandardizedMq standardizedMq) throws Exception {
                         final String PV="clck";
                         //只保留曝光
-                        return PV.equals(standardizedMq.getType())&&reclocList.contains(standardizedMq.getRecloc());
+                        return PV.equals(standardizedMq.getType())&&reclocs.contains(standardizedMq.getRecloc());
                     }
                 });
         //数据部曝光
@@ -120,7 +113,7 @@ public class RecCalculator {
                         final String PV="imp";
                         final String TYPE="1";
                         //只保留曝光且为数据部流量
-                        return PV.equals(standardizedMq.getType())&&TYPE.equals(standardizedMq.getBranch())&&reclocList.contains(standardizedMq.getRecloc());
+                        return PV.equals(standardizedMq.getType())&&TYPE.equals(standardizedMq.getBranch())&&reclocs.contains(standardizedMq.getRecloc());
                     }
                 });
         //数据部点击
@@ -131,7 +124,7 @@ public class RecCalculator {
                         final String PV="clck";
                         final String TYPE="1";
                         //只保留曝光且为数据部流量
-                        return PV.equals(standardizedMq.getType())&&TYPE.equals(standardizedMq.getBranch())&&reclocList.contains(standardizedMq.getRecloc());
+                        return PV.equals(standardizedMq.getType())&&TYPE.equals(standardizedMq.getBranch())&&reclocs.contains(standardizedMq.getRecloc());
                     }
                 });
 

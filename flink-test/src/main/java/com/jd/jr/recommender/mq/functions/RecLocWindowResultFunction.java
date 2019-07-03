@@ -10,11 +10,6 @@ import org.apache.flink.util.Collector;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * @Auther: qiuyujiang
- * @Date: 2019/5/9.
- * @Description: 请填写
- */
 public class RecLocWindowResultFunction implements WindowFunction<Long, RecChartData, Tuple, TimeWindow> {
     /**
      * pv：曝光   pcv：点击
